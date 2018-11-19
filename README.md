@@ -26,5 +26,5 @@
 
 6. In ```RecruitView```, sort the job list by preference ascending.
 
-
+7. In ```job.html``` display the list of recruits associated with the job.
 
