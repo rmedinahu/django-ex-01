@@ -1,13 +1,12 @@
-<!-- recruit.html -->
+<!-- job.html -->
 {% extends "base.html" %}
 
 {% block content_body %}
     <div class="row">
       <div class="col">
-        <h2>Recruit</h2>
-        <p>FIRST NAME: {{ object.fname }}</p>
-        <p>AGE: {{ object.age }}</p>
+        <h2>Job</h2>
+        <p>{{ object.title }}</p>
+        <p>{{ object.salary }}</p>
       </div>
     </div>
 {% endblock %}
-

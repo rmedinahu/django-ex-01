@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content_body %}
+    <div class="row">
+      <div class="col">
+        <h2>Job Recruit Choices</h2>
+        <ul>
+        {% for recruit_job in object_list %}
+          <li>
+            <a href="{% url 'job' recruit_job.job.pk %}">
+            {{ recruit_job.recruit.fname }}
+            {{ recruit_job.job.title }}
+            </a>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+  {% endblock %}
+

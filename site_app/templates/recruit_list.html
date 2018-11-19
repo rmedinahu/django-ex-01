@@ -1,0 +1,19 @@
+<!-- recruit_list.html -->
+{% extends "base.html" %}
+
+{% block content_body %}
+    <div class="row">
+      <div class="col">
+        <h2>List of All Recruits</h2>
+        <ul>
+        {% for recruit_obj in object_list %}
+          <li>
+            <a href="{% url 'recruit' recruit_obj.pk %}">
+            {{ recruit_obj.fname }}
+            </a>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+{% endblock %}
