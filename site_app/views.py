@@ -20,7 +20,7 @@ class RecruitView(generic.DetailView):
 		recruit_obj = self.get_object()
 
 		# Collect all the jobs associated with this recruit.
-		context['jobs'] = recruit_obj.jobs.all()
+		context['jobs'] = recruit_obj.jobs.all().order_by('preference')
 		return context
 
 
@@ -39,7 +39,7 @@ class JobView(generic.DetailView):
 		job_obj = self.get_object()
 
 		# Collect all the recruits associated with this job.
-		context['recruits'] = job_obj.recruits.all()
+		context['recruits'] = job_obj.recruits.all().order_by('recruit__fname')
 		return context
 
 

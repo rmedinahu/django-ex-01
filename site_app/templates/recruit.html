@@ -7,6 +7,15 @@
         <h2>Recruit</h2>
         <p>FIRST NAME: {{ object.fname }}</p>
         <p>AGE: {{ object.age }}</p>
+        <p>Favorite Jobs</p>
+        <p>
+        	{% for job_assoc in jobs %}
+        		<p>
+        		{{ job_assoc.job.title }} 
+        		({{ job_assoc.preference }})
+        		</p>
+        	{% endfor %}
+        </p>
       </div>
     </div>
 {% endblock %}
