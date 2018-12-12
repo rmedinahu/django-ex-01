@@ -14,12 +14,10 @@ class RecruitView(generic.DetailView):
 	model = Recruit
 	template_name = 'recruit.html'
 
-	# Method override to provide additional context variables to template.
 	def get_context_data(self, **kwargs):
 		context = super(RecruitView, self).get_context_data(**kwargs)
 		recruit_obj = self.get_object()
 
-		# Collect all the jobs associated with this recruit.
 		context['jobs'] = recruit_obj.jobs.all().order_by('preference')
 		return context
 
@@ -33,12 +31,10 @@ class JobView(generic.DetailView):
 	model = Job
 	template_name = 'job.html'
 
-	# Method override to provide additional context variables to template.
 	def get_context_data(self, **kwargs):
 		context = super(JobView, self).get_context_data(**kwargs)
 		job_obj = self.get_object()
 
-		# Collect all the recruits associated with this job.
 		context['recruits'] = job_obj.recruits.all().order_by('recruit__fname')
 		return context
 
